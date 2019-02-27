@@ -1,0 +1,79 @@
+//-- Mixin for background-colors
+@mixin background-colors {
+    &.ideasFictions {
+        background-color: $yellow;
+    }
+    &.temporary {
+        background-color: $blue;
+    }
+    &.permanent {
+        background-color: $red;
+    }
+}
+
+//--Mixin no select
+@mixin no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+//-- Breakpoints
+//-- $point - width of screen
+@mixin breakpoint($point) {
+    @if $point==desktop {
+        @media #{$bp-large-px} {
+            @content;
+        }
+    }
+    @else if $point==tablet {
+        @media #{$bp-normal-px} {
+            @content;
+        }
+    }
+    @else if $point==mobile {
+        @media #{$bp-small-px} {
+            @content;
+        }
+    }
+}
+
+//-- Font sizes
+//-- $size - name of the font used
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+//-- Visually Hidden elements
+%visuallyhidden {
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+}
+
+//-- Clearfix
+%clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}

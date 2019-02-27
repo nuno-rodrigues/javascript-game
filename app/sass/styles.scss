@@ -1,0 +1,27 @@
+@charset "UTF-8";
+@import "variables";
+@import "mixins";
+
+// Styles
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+* {
+  @include no-select;
+}
+
+canvas {
+  background-image: url("../images/background.jpg");
+  background-size: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.sprites {
+  display: none;
+}

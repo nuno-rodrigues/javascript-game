@@ -1,0 +1,28 @@
+/*
+ * _variables.scss
+ */
+
+// -- Font sizes
+$font-size-base:    18px;
+$font-size-title:   24px;
+// -- Colors
+$blue:      blue;
+$red:       red;
+$yellow:    yellow;
+$magenta:   magenta;
+// -- Breakpoints
+$bp-small-px: "(max-width: 768px)";
+$bp-normal-px: "(max-width: 1024px)";
+$bp-large-px: "(max-width: 1440px)";
+%visuallyhidden {
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+}
+// --Settings animations
+$imageSpeed: .5s;
